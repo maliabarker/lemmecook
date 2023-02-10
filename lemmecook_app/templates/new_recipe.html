@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% set active_page = "new_recipe" %}
+
+{% block title %}Add Recipe{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="my-3 text-center">Add New Recipe</h2>
+        <form action="/new-recipe" method="POST" id="new-recipe-form" enctype="multipart/form-data">
+            {% include 'partials/recipe_form.html' %}
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/add_ingredient.js') }}"></script>
+{% endblock %}

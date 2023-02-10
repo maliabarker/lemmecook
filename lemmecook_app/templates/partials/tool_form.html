@@ -1,0 +1,22 @@
+{{ form.csrf_token }}
+<fieldset>
+    <div class="form-floating mb-3">
+        {{ form.tool_name(class="form-control form-control-lg", placeholder="Tool Name") }}
+        {{ form.tool_name.label }}
+    </div>
+    <div class="form-floating mb-3">
+        {{ form.location(class="form-control", placeholder="Location") }}
+        {{ form.location.label }}
+    </div>
+    <div class="mb-3">
+        {{ form.photo.label(class="form-label fs-5") }}
+        {{ form.photo(class="form-control") }}
+    </div>
+    <div class="form-floating mb-3">
+        {{ form.notes(class="form-control form-control-lg", placeholder="Tool Notes", style="height: 100px") }}
+        {{ form.notes.label }}
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        {{ form.submit(class="btn btn-success px-5 mb-3 py-2 float-right") }}
+    </div>
+</fieldset>

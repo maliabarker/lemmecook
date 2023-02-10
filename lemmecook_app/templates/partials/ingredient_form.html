@@ -1,0 +1,24 @@
+<div class="form-floating mb-3">
+    {{ ingredient.form.ingredient_name(class="form-control", placeholder="Ingredient Name") }}
+    {{ ingredient.form.ingredient_name.label }}
+</div>
+<div class="form-floating mb-3">
+    {{ ingredient.form.measurement(class="form-control", placeholder="Measurement") }}
+    {{ ingredient.form.measurement.label }}
+</div>
+<div class="form-floating mb-3">
+    {{ ingredient.form.tool(class="form-select", placeholder="Measurement") }}
+    {{ ingredient.form.tool.label }}
+</div>
+<div class="form-floating mb-3">
+    {{ ingredient.form.location(class="form-control", placeholder="Location") }}
+    {{ ingredient.form.location.label }}
+</div>
+<div class="mb-3">
+    {{ ingredient.form.photo.label(class="form-label") }}
+    {{ ingredient.form.photo(class="form-control") }}
+</div>
+<div class="form-floating mb-3">
+    {{ ingredient.form.notes(class="form-control form-control-lg", placeholder="Ingredient Notes", style="height: 100px") }}
+    {{ ingredient.form.notes.label }}
+</div>

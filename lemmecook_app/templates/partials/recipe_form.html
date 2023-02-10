@@ -1,0 +1,47 @@
+{{ form.csrf_token }}
+<fieldset class="mx-5">
+    <div class="form-floating mb-3">
+        {{ form.recipe_name(class="form-control form-control-lg", placeholder="Recipe Name") }}
+        {{ form.recipe_name.label }}
+    </div>
+    <div class="form-floating mb-3">
+        {{ form.description(class="form-control form-control-lg", placeholder="Recipe Description", style="height: 100px") }}
+        {{ form.description.label }}
+    </div>
+    <div class="form-floating mb-3">
+        {{ form.cuisine_type(class="form-control form-control-lg", placeholder="Cuisine Type") }}
+        {{ form.cuisine_type.label }}
+    </div>
+    <div class="form-floating mb-3">
+        {{ form.cook_time(class="form-control form-control-lg", placeholder="Cook Time") }}
+        {{ form.cook_time.label }}
+    </div>
+    <div class="form-floating mb-3">
+        {{ form.instructions(class="form-control form-control-lg", placeholder="Instructions", style="height: 100px") }}
+        {{ form.instructions.label }}
+    </div>
+    {{ form.has_cooked.label(class="fs-5 mx-2 by-4") }} {{ form.has_cooked(class="form-check-input mt-2 mb-4") }}
+    <div class="mb-3">
+        {{ form.photo.label(class="form-label fs-5") }}
+        {{ form.photo(class="form-control") }}
+    </div>
+    <h4 class="text-center">Add Ingredients:</h4>
+    <div id="form-ingredients">
+        {% for ingredient_batch in form.ingredients|batch(3) %}
+            <div class="row mx-2">
+                {% for ingredient in ingredient_batch %}
+                    <div class="col-md-4">
+                        {% include 'partials/ingredient_form.html' %}
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="text-center pb-3">
+        {{ form.add_ingredient(class="btn btn-primary px-5 mt-1", id="add-ingredient") }}
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        {{ form.submit(class="btn btn-success px-5 mb-3 py-2 float-right") }}
+    </div>
+</fieldset>

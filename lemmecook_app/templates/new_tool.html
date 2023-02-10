@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% set active_page = "new_tool" %}
+
+{% block title %}Add Tool{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="my-3 text-center">Add New Tool</h2>
+        <form action="/new-tool" method="POST" id="new-tool-form" enctype="multipart/form-data">
+            {% include 'partials/tool_form.html' %}
+        </form>
+    </div>
+{% endblock %}

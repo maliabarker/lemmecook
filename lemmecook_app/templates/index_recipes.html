@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% set active_page = "all_recipes" %}
+
+{% block title %}All Recipes{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <p>View All Recipes</p>
+        <p>Will have serach bar, sort by ratings, sort by cuisine type, sort by has/hasn't cooked</p>
+        {% for recipe in recipes %}
+            {{ recipe.name }}
+        {% endfor %}
+    </div>
+{% endblock %}
